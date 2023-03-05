@@ -1,0 +1,27 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #FFFEE4;
+}
+
+/*Font size and alignment for the title */
+h1 {
+  style="font-size:10vw";
+  text-align: center;
+}
+/*SIDE NAV BAR DESIGN */
+.sidebar {
+  list-style-type: none;
+  margin: 5;
+  padding: 5;
+}
+/*END SIDE NAV BAR DESIGN */
+
+/*START DUE TODAY DESIGN */
+.table,th, td {
+  border: 1px solid;
+}
+/*END DUE TODAY DESIGN */
