@@ -9,8 +9,8 @@ html, body {
   
   /*Font size and alignment for the title */
   h1 {
-    style="font-size:10vw";
-    text-align: center;
+    font-size: 10;
+    text-align:  center;
   }
   /*SIDE NAV BAR DESIGN */
   .sidebar {
