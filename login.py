@@ -1,4 +1,12 @@
 import hashlib
+from flask import Flask, render_template
+
+app = Flask(__name__)
+@app.route("/")
+def login():
+    return render_template("login.html")
+
+
 def signup():
     email = input("Enter email address: ")
     pwd = input("Enter password: ")
@@ -45,3 +53,7 @@ while 1:
         break
     else:
         print("Sorry, this action does not exist")
+    
+    
+if __name__ == "__main__":
+    app.run(debug=True)
