@@ -69,7 +69,7 @@ function addItem(e) {
 function removeItem(e) {
 	e.preventDefault();
 	if (e.target.classList.contains("delete")) {
-		if (confirm("Are you Sure?")) {
+		if (confirm("Are you sure you want to delete?")) {
 			let li = e.target.parentNode;
 			items.removeChild(li);
 			document.getElementById("lblsuccess").innerHTML
