@@ -23,7 +23,7 @@ def login():
     auth = pwd.encode()
     auth_hash = hashlib.md5(auth).hexdigest()
     with open("credentials.txt", "r") as f:
-        stored_email,stored_pwd== f.read().split("\n")
+        stored_email,stored_pwd == f.read().split("\n")
     f.close()
 
     if email == stored_email and auth_hash == stored_pwd:
