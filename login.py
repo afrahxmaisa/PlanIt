@@ -1,59 +1,60 @@
 import hashlib
-from flask import Flask, render_template
 
-app = Flask(__name__)
-@app.route("/")
-def login():
-    return render_template("login.html")
+from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
+
+login = Flask(__name__)
+login.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+db = SQLAlchemy(login)
 
 
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(32), nullable=False)
+
+
+@login.route('/')
+def index():
+    return render_template('login.html')
+
+
+@login.route('/signup', methods=['GET', 'POST'])
 def signup():
-    stored_email = input("Enter email address: ")
-    pwd = input("Enter password: ")
-    conf_pwd = input("Confirm password: ")
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        confirm_password = request.form['confirm_password']
 
-    if conf_pwd == pwd:
-        enc = conf_pwd.encode()
-        hash1 = hashlib.md5(enc).hexdigest()
+        if confirm_password == password:
+            hashed_password = hashlib.md5(password.encode()).hexdigest()
+            user = User(email=email, password=hashed_password)
+            db.session.add(user)
+            db.session.commit()
+            return f'User {email} has been registered successfully'
+        else:
+            return 'Passwords do not match'
 
-        with open("credentials.txt", "w") as f:
-            f.write({stored_email} +"\n")
-            f.write(hash1)
-        f.close()
-        print("You have registered successfully")
-        return stored_email
-    else:
-        print("Password does not match")
-def login(stored_email):
-    email = input("Enter email: ")
-    pwd = input("Enter password: ")
-    
-    auth = pwd.encode()
-    auth_hash = hashlib.md5(auth).hexdigest()
-    with open("credentials.txt", "r") as f:
-        stored_pwd = f.read().split("\n")
-    f.close()
+    return render_template('login.html')
 
-    if email == stored_email and auth_hash == stored_pwd:
-        print("Login in successful")
-    else:
-        print("Login failed: \n")
 
-while 1:
-    print("******* Login System **********")
-    print("1.Signup")
-    print("2.Login")
-    print("3.Exit")
-    ch = int(input("Enter which action you want to take: "))
-    if ch== 1:
-        signup()
-    elif ch ==2:
-        login()
-    elif ch==3:
-        break
-    else:
-        print("Sorry, this action does not exist")
-    
-    
-if __name__ == "__main__":
-    app.run(debug=True)
+@login.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        hashed_password = hashlib.md5(password.encode()).hexdigest()
+
+        user = User.query.filter_by(email=email).first()
+
+        if user and user.password == hashed_password:
+            return f'Welcome, {email}!'
+        else:
+            return 'Login failed. Please check your email and password.'
+
+    return render_template('login.html')
+
+
+if __name__ == '__main__':
+    db.create_all()
+    login.run(debug=True)
