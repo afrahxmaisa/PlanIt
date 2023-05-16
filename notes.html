@@ -72,6 +72,15 @@
               cursor: pointer;
               z-index: 2;
             }
+
+            .sorting-options {
+              margin-bottom: 1rem;
+            }
+
+            .sorting-options label {
+              font-weight: bold;
+            }
+            
         </style>
     
 </head>
@@ -107,6 +116,15 @@
                 <button type="submit">Add Note</button>
             </form>
         </section>
+
+        <div class="sorting-options">
+          <label for="sort-notes">Sort by:</label>
+          <select id="sort-notes">
+              <option value="title">Title</option>
+              <option value="date">Date Created</option>
+              <option value="modified">Last Modified</option>
+          </select>
+      </div>
         
         <section id="notes-container">
             <h2>Your Notes</h2>

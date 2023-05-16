@@ -164,6 +164,31 @@ function saveChanges(index) {
 }
 
 
+const sortNotesSelect = document.getElementById('sort-notes');
+sortNotesSelect.addEventListener('change', () => {
+    const selectedOption = sortNotesSelect.value;
+    sortNotes(selectedOption);
+    displayNotes();
+});
+
+function sortNotes(option) {
+    switch (option) {
+        case 'title':
+            notes.sort((a, b) => a.title.localeCompare(b.title));
+            break;
+        case 'date':
+            notes.sort((a, b) => new Date(a.dateCreated) - new Date(b.dateCreated));
+            break;
+        case 'modified':
+            notes.sort((a, b) => new Date(a.lastModified) - new Date(b.lastModified));
+            break;
+        default:
+            break;
+    }
+}
+
+
+
 function openArchivedNotesModal() {
     displayArchivedNotes();
     document.getElementById('archived-notes-modal').style.display = 'block';

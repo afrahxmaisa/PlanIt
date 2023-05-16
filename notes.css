@@ -186,3 +186,12 @@ button:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+.sorting-options {
+    margin-bottom: 1rem;
+}
+
+.sorting-options label {
+    font-weight: bold;
+}
