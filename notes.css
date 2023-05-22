@@ -6,11 +6,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #cbb4ef;
 }
 
 header {
-    background-color: #4a90e2;
+    background-color: #2b1055;
     color: #fff;
     text-align: center;
     padding: 1rem;
@@ -18,11 +18,13 @@ header {
 
 h1 {
     font-size: 2rem;
+    color: white
 }
 
 h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: white
 }
 
 main {
@@ -31,16 +33,18 @@ main {
 }
 
 section {
-    background-color: #fff;
+    background-color: #431c815e;
     padding: 2rem;
     margin-bottom: 2rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     border-radius: 10px;
+    
 }
 
 label {
     display: block;
     margin-bottom: 0.5rem;
+    color: white
 }
 
 input, textarea {
@@ -53,7 +57,7 @@ input, textarea {
 }
 
 button {
-    background-color: #4a90e2;
+    background-color: #3e1d74;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
@@ -63,7 +67,7 @@ button {
 }
 
 button:hover {
-    background-color: #3a70b0;
+    background-color: #1e0644;
 }
 
 #notes-container {
@@ -113,7 +117,13 @@ button:hover {
 
 .note button:nth-of-type(2) {
     right: 1rem;
-    background-color: #4a90e2;
+    background-color: #2b1055;
+    border-radius: 10px;
+}
+
+.note button:nth-of-type(3) {
+    right: 10.4rem;
+    background-color: green;
     border-radius: 10px;
 }
 
@@ -185,4 +195,31 @@ button:hover {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+.sorting-options {
+    margin-bottom: 1rem;
+}
+
+.sorting-options label {
+    font-weight: bold;
+}
+
+.note h3, .note p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#note-color-button {
+    background-color: #3e1d74;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#note-color-button:hover {
+    background-color: #1e0644;
 }
