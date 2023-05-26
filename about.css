@@ -1,0 +1,101 @@
+/* Set default styles for the page */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f5f5f5;
+	color: #cdb4e2;
+	margin: 0;
+	padding: 0;
+}
+
+/* Style the header */
+header {
+	background-color: #cdb4e2;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+/* Style the main section */
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+/* Style the paragraphs */
+p {
+	margin-bottom: 20px;
+	line-height: 1.5;
+}
+
+/* Style the footer */
+footer {
+	background-color: #cdb4e2;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+/* Style the copyright notice */
+footer p {
+	margin: 0;
+	font-size: 14px;
+}
+
+/* Style the page title */
+h1 {
+	margin: 0;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+/* Style the links */
+a {
+	color: #333;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #666;
+}
+
+/* additional resources section style */
+.rounded-box {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  padding: 10px;
+  display: inline-block;
+}
+
+/*side bar css */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #7FDBFF;
+    z-index: 1;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 10;
+    margin: 50px 0 0 0;
+  }
+
+  .sidebar li {
+    padding: 20px 0;
+    text-align: left;
+  }
+
+  .hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+  }
