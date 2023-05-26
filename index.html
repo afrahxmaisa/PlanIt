@@ -1,153 +1,61 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <style>
-		body {
-			background: linear-gradient(to bottom right, #034a7a, #021f44, #4c1139);
-		}
-	</style>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>PlanIt</title>
-  <link href="index.css" rel="stylesheet" type="text/css" />
-
-<!DOCTYPE html>
-<html>
-
-  <style>
-    body {
-			background-color: white;
-		}
-      .tab {
-        overflow: hidden;
-        border: 1px solid #ccc;
-        background-color: #f1f1f1;
-      }
-
-      .tab button {
-        background-color: inherit;
-        float: left;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 14px 16px;
-        transition: 0.3s;
-        font-size: 17px;
-      }
-
-      .tab button:hover {
-        background-color: #ddd;
-      }
-
-      .tab button.active {
-        background-color: #ccc;
-      }
-
-      .tabcontent {
-        display: none;
-        padding: 6px 12px;
-        border: 1px solid #ccc;
-        border-top: none;
-      }
-
-    .sidebar {
-		  position: fixed;
-		  top: 0;
-		  left: -250px;
-		  width: 250px;
-		  height: 100%;
-		  background-color: #7FDBFF;
-		  z-index: 1;
-		  transition: all 0.4s ease-in-out;
-		}
-
-		.sidebar ul {
-		  list-style: none;
-		  padding: 10;
-		  margin: 50px 0 0 0;
-		}
-
-		.sidebar li {
-		  padding: 20px 0;
-		  text-align: left;
-		}
-
-		.hamburger {
-		  position: fixed;
-		  top: 20px;
-		  left: 20px;
-		  font-size: 24px;
-		  cursor: pointer;
-		  z-index: 2;
-		}
-    </style>
-
-  
-</head>
-
-<!--PlanIt tagline-->
-<head>
-  <style>
-    .box {
-      display: flex;
-      align-items: right;
-      justify-content: center;
-      width: 10%;
-      height: 500px;
-    }
-  </style>
-</head>
-
-<body style="color:#7FDBFF; font-family: 'Montserrat', sans-serif;">
-  <div class = "box">
-    From chaos to clarity, with
-  </div>
-</body>
-<!--end of PlanIt tagline-->
-
-<!--aligning the heading to the center of the homepage-->
-<head>
-  <style>
-    .box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50%;
-      height: 500px;
-    }
-  </style>
-</head>
-<h1 style="color:#7FDBFF; font-family: 'Montserrat', sans-serif;">
-  <div class = "box">
-    PlanIt.
-  </div>
-</h1>
-
-<!--end of aligning the heading to the center of the homepage-->
-
-<body>
+  <head>
+    <title>PlanIt: Organizational Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">PlanIt</a>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Notes</a></li>
+        <li><a href="#">Reminder</a></li>
+        <li><a href="#">Motivation</a></li>
+      </ul>
+    </header>
+    <section>
+      <img src="stars.png" id="stars">
+      <img src="moon.png" id="moon">
+      <img src="mountains_behind.png" id="mountains_behind">
+      <h2 id="text">PlanIt</h2>
+      <a href="sec" id="btn">Login</a> 
+      <img src="mountains_front.png" id="mountains_front">
+    </section>
+    <div class=sec" id="sec">
+    <h2>From chaos to clarity</h2>
+    <p>Are you someone struggling with organization? Look no further!
+    Introducing PlanIt.</p>
+    </div>
 
     <script>
-      function openTab(evt, tabName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
-      }
-    </script>
-   <!-- this is where code for horizontal tab bar ends -->
-    
+     let stars = document.getElementById('stars'); 
+     let moon = document.getElementById('moon'); 
+     let mountains_behind = document.getElementById('mountains_behind'); 
+     let text = document.getElementById('text'); 
+     let btn = document.getElementById('btn'); 
+     let mountains_front = document.getElementById('mountains_front'); 
+     let header = document.querySelector('header');
 
-  
-  <script src="script.js"></script>
+     window.addEventListener('scroll', function(){
+      let value = window.scrollY;
+      stars.style.left = value * 0.25 + 'px';
+      moon.style.top = value * 1.05 + 'px';
+      mountains_behind.style.top = value * 0.5 + 'px';
+      mountains_front.style.top = value * 0 + 'px';
+      text.style.marginRight = value * 4 + 'px';
+      text.style.marginTop = value * 1.5 + 'px';
+      btn.style.marginTop = value * 1.5 + 'px';
+      header.style.top = value * 0.5 + 'px';
+     })
+    </script>
+  </body>
+</html>
+
+
+
 
   <!--SIDE BAR -->
 <button class="hamburger" onclick="toggleSidebar()">☰</button>
