@@ -1,9 +1,15 @@
 class Note {
-    constructor(title, content) {
+    constructor(title, content, attachment, color) {
         this.title = title;
         this.content = content;
+        this.attachment = attachment;
+        this.dateCreated = new Date(); // the date when the note is created
+        this.lastModified = new Date(); // the date when the note is last modified
+        this.isArchived = false; // a boolean indicating whether the note is archived or not
+        this.color = color;
     }
 }
+
 
 let notes = [];
 
@@ -12,15 +18,20 @@ const noteTitle = document.getElementById('note-title');
 const noteContent = document.getElementById('note-content');
 const searchNotes = document.getElementById('search-notes');
 const notesContainer = document.getElementById('notes-container');
+const noteAttachment = document.getElementById('note-attachment');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    const noteColor = document.getElementById('note-color'); // Declare and assign the noteColor variable here
     const title = noteTitle.value;
     const content = noteContent.value;
-    const note = new Note(title, content);
+    const attachment = noteAttachment.files[0]; 
+    const color = noteColor.value; // Get the value of the note color
+    const note = new Note(title, content, attachment, color); // Include color in Note constructor
     notes.push(note);
     noteTitle.value = '';
     noteContent.value = '';
+    noteColor.value = '#ffffff'; // Reset color picker to white or any default color
     displayNotes();
 });
 
@@ -46,9 +57,14 @@ function displayNotes(searchQuery = '') {
         note.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
+    
+
     filteredNotes.forEach((note, index) => {
         const noteElement = document.createElement('div');
+        noteElement.style.backgroundColor = note.color;
         noteElement.classList.add('note');
+
+        
 
         const titleElement = document.createElement('h3');
         titleElement.innerText = note.title;
@@ -57,6 +73,8 @@ function displayNotes(searchQuery = '') {
         const contentElement = document.createElement('p');
         contentElement.innerText = note.content;
         noteElement.appendChild(contentElement);
+
+        
 
         const deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete';
@@ -77,13 +95,15 @@ function displayNotes(searchQuery = '') {
         noteElement.appendChild(editButton);
 
         const archiveButton = document.createElement('button');
-            archiveButton.innerText = 'Archive';
-            archiveButton.style.backgroundColor = 'green';
-            archiveButton.addEventListener('click', () => {
-                note.isArchived = true;
-                displayNotes();
+        archiveButton.innerText = 'Archive';
+        archiveButton.style.backgroundColor = 'green';
+        archiveButton.addEventListener('click', () => {
+            note.isArchived = true;
+            displayNotes();
         });
         noteElement.appendChild(archiveButton);
+
+        
 
         notesContainer.appendChild(noteElement);
 

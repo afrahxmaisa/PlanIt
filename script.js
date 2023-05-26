@@ -1,3 +1,8 @@
+
+
+
+
+
 writeRandomText = writeRandomText = function() {
     var items =  new Array();
     items[0] = "I trust my intuition to guide me and I will make good decisions." ;

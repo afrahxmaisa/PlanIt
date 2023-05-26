@@ -8,7 +8,7 @@
 
     <style>
         body {
-                background-color: white;
+                background-color: #cbb4ef;
             }
           .tab {
             overflow: hidden;
@@ -82,9 +82,10 @@
             }
             
         </style>
+        
     
 </head>
-<body>
+<body background="/Users/sushmitsaha/Downloads/gradient-pastel-color-background/7020304.jpg">
     <button class="hamburger" onclick="toggleSidebar()">☰</button>
     <div id="sidebar" class="sidebar" style="text-align: left;">
         <ul>
@@ -101,7 +102,7 @@
     </header>
     <main>
         <section>
-            <h2>Search Notes</h2>
+            <h2 style="">Search Notes</h2>
             <input type="text" id="search-notes" placeholder="Search notes...">
             <button id="archived-notes-button">Archived Notes</button>
         </section>
@@ -113,7 +114,13 @@
                 <input type="text" id="note-title" required>
                 <label for="note-content">Content:</label>
                 <textarea id="note-content" rows="4" required></textarea>
+                <label for="note-color">Note Color:</label>
+                <button type="button" id="note-color" style="background-color: #3e1d74;">Choose a Note Color</button>
+                <input type="color" id="note-color" name="note-color">
+                <label for="note-attachment">Attachment</label>
+                <input type="file" id="note-attachment">
                 <button type="submit">Add Note</button>
+                
             </form>
         </section>
 
