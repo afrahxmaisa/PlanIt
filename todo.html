@@ -1,86 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="todo.css" rel="stylesheet" type="text/css" />
-  <script src="todo.js"></script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>To Do List</title>
+  <link rel="stylesheet" href="todo.css">
 </head>
 
 <body>
 
-<!--SIDE BAR -->
-<button class="hamburger" onclick="toggleSidebar()">☰</button>
+  <!--SIDE BAR -->
+  <button class="hamburger" onclick="toggleSidebar()">☰</button>
 
-<div id="sidebar" class="sidebar" style="text-align: left;">
-  <ul>
-    <li><img src="home.png" alt="Calendar Logo" width="20" height="20"/><a href="index.html">Home</a></li>
-    <li><img src="calendar.png" alt="Calendar Logo" width="20" height="20"/><a href="calendar.html">Calendar</a></li>
-    <li><img src="to-do-list.png" alt="To Do Logo" width="20" height="20"/><a href="todo.html">To Do</a></li>
-    <li><img src="bell.png" alt="Reminder Logo" width="20" height="20"/><a href="reminder.html">Reminders</a></li>
-    <li><img src="limited.png" alt="Habit Tracker Logo" width="20" height="20"/><a href="habit.html">Habit Tracker</a></li>
-    <li><img src="notes.png" alt="Notes Logo" width="20" height="20"/><a href="notes.html">Notes</a></li>
-  </ul>
-</div>
-<script>
-	function toggleSidebar() {
-	  var sidebar = document.getElementById("sidebar");
-	  if (sidebar.style.left === "-250px") {
-	    sidebar.style.left = "0";
-	  } else {
-	    sidebar.style.left = "-250px";
-	  }
-	}
-</script>
-
-  
+  <div id="sidebar" class="sidebar" style="text-align: left;">
+    <ul>
+      <li><img src="home.png" alt="Calendar Logo" width="20" height="20"/><a href="index.html">Home</a></li>
+      <li><img src="calendar.png" alt="Calendar Logo" width="20" height="20"/><a href="calendar.html">Calendar</a></li>
+      <li><img src="to-do-list.png" alt="To Do Logo" width="20" height="20"/><a href="todo.html">To Do</a></li>
+      <li><img src="bell.png" alt="Reminder Logo" width="20" height="20"/><a href="reminder.html">Reminders</a></li>
+      <li><img src="limited.png" alt="Habit Tracker Logo" width="20" height="20"/><a href="habit.html">Habit Tracker</a></li>
+      <li><img src="notes.png" alt="Notes Logo" width="20" height="20"/><a href="notes.html">Notes</a></li>
+    </ul>
+  </div>
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.getElementById("sidebar");
+      if (sidebar.style.left === "-250px") {
+        sidebar.style.left = "0";
+      } else {
+        sidebar.style.left = "-250px";
+      }
+    }
+  </script>  
   <!--END SIDE BAR -->
 
-  <header class="bg-sucess text-white p-5">
-    <div class="container">
+  <div class="container">
+    <div class="todo-app">
+      <h2>To-Do List <img src="images/icon.png"></h2> 
       <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <font face="Cambria" size="10" color="white">
-            <strong>Welcome to your To Do list</strong>
-          </font>
-
-        </div>
+        <input type="text" id="input-box" placeholder="Add your text"> 
+        <button onclick="addTask()">Add</button>
       </div>
+      <ul id="list-container">
+      </ul>
     </div>
-  </header>
-
-  <div class="container mt-3">
-    <h2>Add Items</h2>
-
-    <label id="lblsuccess" class="text-success" style="display: none;">
-    </label>
-
-    <form id="addForm">
-      <div class="row">
-        <div class="col-lg-7 col-md-7 col-sm-7">
-
-          <input type="text" onkeyup="toggleButton(this, 'submit')" class="form-control" id="item">
-        </div>
-
-        <div class="col-lg-5 col-md-5 col-sm-5">
-          <input type="submit" class="btn btn-dark" id="submit" value="Submit" disabled>
-        </div>
-      </div>
-    </form>
-
-    <h3 class="mt-4">Tasks</h3>
-
-    <form id="addForm">
-      <ul class="list-group" id="items"></ul>
-    </form>
   </div>
+<script src="todo.js"></script>
 </body>
 
 </html>
