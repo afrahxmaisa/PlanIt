@@ -191,6 +191,7 @@ function addListner() {
   });
 }
 
+//TODAY BUTTON TO UPDATE VIEW TO TODAYS VIEW
 todayBtn.addEventListener("click", () => {
   today = new Date();
   month = today.getMonth();
@@ -214,7 +215,7 @@ dateInput.addEventListener("input", (e) => {
 });
 
 gotoBtn.addEventListener("click", gotoDate);
-
+//GO TO FIELD FOR USER INPUT DATE
 function gotoDate() {
   console.log("here");
   const dateArr = dateInput.value.split("/");
