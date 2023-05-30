@@ -1,3 +1,38 @@
+/*side bar css */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #a78bd6;
+    z-index: 1;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 10;
+    margin: 50px 0 0 0;
+  }
+
+  .sidebar li {
+    padding: 20px 0;
+    text-align: left;
+  }
+
+  .hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -205,8 +240,6 @@ button:hover {
 .sorting-options label {
     font-weight: bold;
 }
-<<<<<<< HEAD
-=======
 
 .note h3, .note p {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -225,4 +258,3 @@ button:hover {
 #note-color-button:hover {
     background-color: #1e0644;
 }
->>>>>>> 2f1aaf20d809fd771373013f0156c73dcabacaad

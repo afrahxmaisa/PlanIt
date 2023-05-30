@@ -1,3 +1,44 @@
+/*side bar css*/
+.sidebar {
+  list-style-type: none;
+  margin: 5;
+  padding: 5;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #a78bd6;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 50px 0 0 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+  /*side bar css code end*/
+
+
 *{ 
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -109,44 +150,3 @@ ul li span:hover{
   background: #edeef0;
 }
 
-/*side bar css*/
-.sidebar {
-  list-style-type: none;
-  margin: 5;
-  padding: 5;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background-color: #7FDBFF;
-  z-index: 1;
-  transition: all 0.3s ease-in-out;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 50px 0 0 0;
-}
-
-.sidebar li {
-  padding: 10px 0;
-  text-align: center;
-}
-
-.hamburger {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 2;
-}
-
-  /*side bar css code end*/
-
-  

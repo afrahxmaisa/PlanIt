@@ -3,7 +3,7 @@
   <head>
     <title>Daily Affirmation</title>
      <link href="style.css" type="text/css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="affirmation.css" rel="stylesheet" type="text/css" />
   </head>
   
 
@@ -12,6 +12,36 @@
   <body>
     <font color = "#FFFFFF" font size = "24"><center>Daily Affirmation</center></font>
    <center><p><font size="+2" font color="#FFFFFF"><script>writeRandomText();</script></font></center></p>
+
+
+   <!--SIDE BAR -->
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+<div id="sidebar" class="sidebar" style="text-align: left;">
+  <ul>
+    <li><img src="home.png" alt="Calendar Logo" width="20" height="20"/><a href="index.html"> Home</a></li>
+    <li><img src="calendar.png" alt="Calendar Logo" width="20" height="20"/><a href="calendar.html"> Calendar</a></li>
+    <li><img src="to-do-list.png" alt="To Do Logo" width="20" height="20"/><a href="todo.html"> To Do</a></li>
+    <li><img src="bell.png" alt="Reminder Logo" width="20" height="20"/><a href="reminder.html"> Reminders</a></li>
+    <li><img src="notes.png" alt="Notes Logo" width="20" height="20"/><a href="notes.html"> Notes</a></li>
+    <li><img src="affirmations.png" alt="Affirmation Logo" width="20" height="20"/><a href="affirmation.html"> Affirmations</a></li>
+    <li><img src="about.png" alt ="About Page Logo" width="20" height="20"/><a href="about.html"> About Us</a></li>
+    <li><img src="manual.png" alt="User Guide Logo" width="20" height="20"/><a href="userguide.html"> User Guide Manual</a></li>
+    
+  </ul>
+</div>
+<script>
+	function toggleSidebar() {
+	  var sidebar = document.getElementById("sidebar");
+	  if (sidebar.style.left === "-250px") {
+	    sidebar.style.left = "0";
+	  } else {
+	    sidebar.style.left = "-250px";
+	  }
+	}
+</script>
+  <!--END SIDE BAR -->
+
 
   </body>
 </html>

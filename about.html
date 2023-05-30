@@ -11,16 +11,58 @@
 		<h1>About Us</h1>
 	</header>
 
+ <!--SIDE BAR -->
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+<div id="sidebar" class="sidebar" style="text-align: left;">
+  <ul>
+    <li><img src="home.png" alt="Calendar Logo" width="20" height="20"/><a href="index.html"> Home</a></li>
+    <li><img src="calendar.png" alt="Calendar Logo" width="20" height="20"/><a href="calendar.html"> Calendar</a></li>
+    <li><img src="to-do-list.png" alt="To Do Logo" width="20" height="20"/><a href="todo.html"> To Do</a></li>
+    <li><img src="bell.png" alt="Reminder Logo" width="20" height="20"/><a href="reminder.html"> Reminders</a></li>
+    <li><img src="notes.png" alt="Notes Logo" width="20" height="20"/><a href="notes.html"> Notes</a></li>
+    <li><img src="affirmations.png" alt="Affirmation Logo" width="20" height="20"/><a href="affirmation.html"> Affirmations</a></li>
+    <li><img src="about.png" alt ="About Page Logo" width="20" height="20"/><a href="about.html"> About Us</a></li>
+    <li><img src="manual.png" alt="User Guide Logo" width="20" height="20"/><a href="userguide.html"> User Guide Manual</a></li>
+    
+  </ul>
+</div>
+<script>
+	function toggleSidebar() {
+	  var sidebar = document.getElementById("sidebar");
+	  if (sidebar.style.left === "-250px") {
+	    sidebar.style.left = "0";
+	  } else {
+	    sidebar.style.left = "-250px";
+	  }
+	}
+</script>
+  <!--END SIDE BAR -->
+
 	<main>
 		<p>Welcome to our company! We are a team of dedicated professional students who are passionate about our work and committed to providing the best possible methods of organization.</p>
 
 		<p>Our mission is to deliver a simple but streamlined process of becoming organized and efficient at planning ahead.</p>
 
-		<p>Whether you're a working student or a professional worker, we can help you become more efficient at being organized. Contact us today and explore our website to help meet your goal of becoming organized.</p>
+		<p>Whether you're a working student or a professional worker, we can help you become more efficient at being organized. Contact us today and explore our website to help meet your goal of becoming more organized with PlanIt!</p>
 
         <div>
-            <header>Additional Resources</header>
-
+            <header>
+                <h3>Additional Resources</h3>
+            </header>
+            <p>Click the topics below to view additional resources on how to succeed beyond PlanIt:</p>
+            <ul>
+                <li><a href="https://www.mindtools.com/auj8unv/how-to-be-more-organized">Organizational Skills</a></li>
+                <li><a href="https://asana.com/resources/get-organized">17 Tips to Get Started</a></li>
+                <li><a href="https://www.thespruce.com/be-more-organized-on-daily-basis-2648474">10 Things to Do Daily</a></li>
+                <li><a href="https://asana.com/resources/time-management-tips">Time Management Tips</a></li>
+                <li><a href="https://www.coursera.org/articles/time-management">6 Strategies for Time Management</a></li>
+                <li><a href="https://hbr.org/2020/01/time-management-is-about-more-than-life-hacks">Mindset Around Time Management</a></li>
+                <li><a href="https://hbr.org/2017/07/a-way-to-plan-if-youre-bad-at-planning">A Way to Plan to if You Are Bad at Planning</a></li>
+                <li><a href="https://www.tonyrobbins.com/importance-time-management/how-to-plan-your-day/">Plan Your Day to Succeed</a></li>
+                <li><a href="https://www.lifehack.org/485248/7-characteristics-of-a-highly-productive-mindset">Characteristics of a Productive Mindset</a></li>
+                <li><a href="https://focusme.com/blog/how-a-positive-mindset-improves-productivity/">Impact of a Positive Mindset</a></li>
+              </ul>
         </div>
         
 	</main>
@@ -29,20 +71,6 @@
 	<footer>
 		<p>&copy; 2023 PlanIt, Inc. All rights reserved.</p>
 	</footer>
-
-<!-- side bar code -->
-    <div id="sidebar" class="sidebar" style="text-align: left;">
-        <ul>
-          <li><img src="home.png" alt="Calendar Logo" width="20" height="20"/><a href="index.html">Home</a></li>
-          <li><img src="calendar.png" alt="Calendar Logo" width="20" height="20"/><a href="calendar.html">Calendar</a></li>
-          <li><img src="to-do-list.png" alt="To Do Logo" width="20" height="20"/><a href="todo.html">To Do</a></li>
-          <li><img src="bell.png" alt="Reminder Logo" width="20" height="20"/><a href="reminder.html">Reminders</a></li>
-          <li><img src="limited.png" alt="Habit Tracker Logo" width="20" height="20"/><a href="habit.html">Habit Tracker</a></li>
-          <li><img src="notes.png" alt="Notes Logo" width="20" height="20"/><a href="notes.html">Notes</a></li>
-          <li><img src="" alt="Affirmation Page" width="20" height="20"/><a href="affirmation.html">Affirmation</a></li>
-          <li><img src="" alt ="About Page" width="20" height="20"/><a href="about.html">About Us</a></li>
-        </ul>
-    </div>
 
 </body>
 </html>
