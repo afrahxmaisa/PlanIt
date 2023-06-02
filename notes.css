@@ -31,7 +31,19 @@
     z-index: 2;
   }
 
+/* Style the footer */
+footer {
+	background-color: #2b1055;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
 
+/* Style the copyright notice */
+footer p {
+	margin: 0;
+	font-size: 14px;
+}
 
 * {
     box-sizing: border-box;
