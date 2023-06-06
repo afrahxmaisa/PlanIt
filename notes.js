@@ -74,7 +74,18 @@ function displayNotes(searchQuery = '') {
         contentElement.innerText = note.content;
         noteElement.appendChild(contentElement);
 
-        
+        const attachmentMessage = document.createElement('span');
+        if (note.attachment) {
+            attachmentMessage.innerText = `Attachment: ${note.attachment.name}`;
+            attachmentMessage.classList.add('attachment-message');
+            noteElement.appendChild(attachmentMessage);
+        }
+        if (note.attachment) {
+            attachmentMessage.addEventListener('click', () => {
+                const url = URL.createObjectURL(note.attachment);
+                window.open(url);
+            });
+        }
 
         const deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete';
@@ -247,3 +258,24 @@ function displayArchivedNotes() {
 }
 
 
+const noteColor = document.getElementById('note-color');
+
+// Get the "Choose a note color" button
+const noteColorButton = document.getElementById('note-color-button');
+
+// When the "Choose a note color" button is clicked, trigger the color picker
+noteColorButton.addEventListener('click', function() {
+    noteColor.click();
+});
+
+// When a color is picked, change the background color of the "Choose a note color" button
+noteColor.addEventListener('input', function() {
+    noteColorButton.style.backgroundColor = this.value;
+});
+
+const imageElement = document.createElement('img');
+if(note.attachment) {
+    const url = URL.createObjectURL(note.attachment);
+    imageElement.src = url;
+    noteElement.appendChild(imageElement);
+}
