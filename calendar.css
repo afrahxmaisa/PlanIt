@@ -30,6 +30,21 @@
     background-color: #e2e1dc;
   }
 
+/* Style the footer */
+footer {
+	background-color: #2b1055;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+/* Style the copyright notice */
+footer p {
+	margin: 0;
+	font-size: 14px;
+}
+
+
 /*side bar css*/
 .sidebar {
   list-style-type: none;
