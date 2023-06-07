@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>PlanIt: Organizational Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">PlanIt</a>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="calendar.html"> Calendar</a></li>
+        <li><a href="notes.html"> Notes</a></li>
+        <li><a href="reminder.html"> Reminders</a></li>
+        <li><a href="affirmation.html">Motivation</a></li>
+        <li><a href="about.html"> About Us</a></li>
+        <li><a href="userguide.html"> User Guide Manual</a></li>
+      </ul>
+    </header>
+    <section>
+      
+      <img src="stars.png" id="stars">
+      <img src="moon.png" id="moon">
+      <img src="mountains_behind.png" id="mountains_behind">
+      <h2 id="text">PlanIt</h2>
+      
+      <img src="mountains_front.png" id="mountains_front">
+      <button type="submit" id="btn" style="position:relative; z-index:999;"><a href= "index.html">Sign Out</a></button>
+    </section>
+    <div class=sec" id="sec">
+    <h2>From chaos to clarity</h2>
+    <p>Are you someone struggling with organization? Look no further!
+    Introducing PlanIt.</p>
+    </div>
+
+    <script>
+     let stars = document.getElementById('stars'); 
+     let moon = document.getElementById('moon'); 
+     let mountains_behind = document.getElementById('mountains_behind'); 
+     let text = document.getElementById('text'); 
+     let mountains_front = document.getElementById('mountains_front'); 
+     let btn = document.getElementById('btn'); 
+     let header = document.querySelector('header');
+
+     window.addEventListener('scroll', function(){
+      let value = window.scrollY;
+      stars.style.left = value * 0.25 + 'px';
+      moon.style.top = value * 1.05 + 'px';
+      mountains_behind.style.top = value * 0.5 + 'px';
+      mountains_front.style.top = value * 0 + 'px';
+      text.style.marginRight = value * 4 + 'px';
+      text.style.marginTop = value * 1.5 + 'px';
+      btn.style.marginTop = value * 1.5 + 'px';
+      header.style.top = value * 0.5 + 'px';
+     })
+    </script>
+  </body>
+</html>
+
+
+
+
+  <!--SIDE BAR -->
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+<div id="sidebar" class="sidebar" style="text-align: left;">
+  <ul>
+    <li><img src="home.png" alt="Calendar Logo" width="20" height="20"/><a href="index.html"> Home</a></li>
+    <li><img src="calendar.png" alt="Calendar Logo" width="20" height="20"/><a href="calendar.html"> Calendar</a></li>
+    <li><img src="to-do-list.png" alt="To Do Logo" width="20" height="20"/><a href="todo.html"> To Do</a></li>
+    <li><img src="bell.png" alt="Reminder Logo" width="20" height="20"/><a href="reminder.html"> Reminders</a></li>
+    <li><img src="notes.png" alt="Notes Logo" width="20" height="20"/><a href="notes.html"> Notes</a></li>
+    <li><img src="affirmations.png" alt="Affirmation Logo" width="20" height="20"/><a href="affirmation.html"> Affirmations</a></li>
+    <li><img src="about.png" alt ="About Page Logo" width="20" height="20"/><a href="about.html"> About Us</a></li>
+    <li><img src="manual.png" alt="User Guide Logo" width="20" height="20"/><a href="userguide.html"> User Guide Manual</a></li>
+    
+  </ul>
+</div>
+<script>
+	function toggleSidebar() {
+	  var sidebar = document.getElementById("sidebar");
+	  if (sidebar.style.left === "-250px") {
+	    sidebar.style.left = "0";
+	  } else {
+	    sidebar.style.left = "-250px";
+	  }
+	}
+</script>
+  <!--END SIDE BAR -->
+
+  
+  <!-- this is where code for account details starts -->
+
+  <!-- this is where code for log in starts -->
+  <button type="submit"><a href= "login.html">Login</a></button>
+
+  <!-- this is where code for task list on homepage ends --> 
+</body>
+
+</html>
