@@ -12,6 +12,8 @@ html, body {
     font-size: 10;
     text-align:  center;
   }
+
+  
   /*SIDE NAV BAR DESIGN */
   .sidebar {
     list-style-type: none;
@@ -25,4 +27,4 @@ html, body {
     border: 1px solid;
   }
   /*END DUE TODAY DESIGN */
-  
+

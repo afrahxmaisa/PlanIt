@@ -19,12 +19,14 @@
       </ul>
     </header>
     <section>
+      
       <img src="stars.png" id="stars">
       <img src="moon.png" id="moon">
       <img src="mountains_behind.png" id="mountains_behind">
       <h2 id="text">PlanIt</h2>
-      <a href="sec" id="btn">Login</a> 
+      
       <img src="mountains_front.png" id="mountains_front">
+      <button type="submit" id="btn" style="position:relative; z-index:999;"><a href= "login.html">Login</a></button>
     </section>
     <div class=sec" id="sec">
     <h2>From chaos to clarity</h2>
@@ -37,8 +39,8 @@
      let moon = document.getElementById('moon'); 
      let mountains_behind = document.getElementById('mountains_behind'); 
      let text = document.getElementById('text'); 
-     let btn = document.getElementById('btn'); 
      let mountains_front = document.getElementById('mountains_front'); 
+     let btn = document.getElementById('btn'); 
      let header = document.querySelector('header');
 
      window.addEventListener('scroll', function(){
@@ -91,7 +93,7 @@
   <!-- this is where code for account details starts -->
 
   <!-- this is where code for log in starts -->
-   <button type="submit"><a href= "login.html">Login</a></button>
+  <button type="submit"><a href= "login.html">Login</a></button>
 
   <!-- this is where code for task list on homepage ends --> 
 </body>
